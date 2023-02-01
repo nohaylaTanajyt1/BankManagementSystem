@@ -2,7 +2,7 @@ package Modele.gestionBanque;
 
 import Modele.gestionBD.Employe;
 
-import static Modele.gestionBD.Employe.existeEmploye;
+//import static Modele.gestionBD.Employe.existeEmploye;
 
 /**
  * author nohayla
@@ -56,6 +56,6 @@ public class MdlConnexion {
     }
 
     public boolean authentifierAgent(){
-        return existeEmploye(login, mdp, profil);
+        return Employe.existeEmploye(login, mdp, profil); ///////////////here
     }
 }

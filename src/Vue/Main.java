@@ -71,7 +71,7 @@ public class Main extends JFrame {
 		mnAccueil.setMnemonic('A');
 		menuBar.add(mnAccueil);
 		
-		JMenuItem mntmDeconnexion = new JMenuItem("deconnexion");
+		JMenuItem mntmDeconnexion = new JMenuItem("Déconnexion");
 		mnAccueil.add(mntmDeconnexion);
 		mntmDeconnexion.addActionListener(new ActionListener() {
 			
@@ -83,11 +83,11 @@ public class Main extends JFrame {
 		});
 		
 		if(profil.equals("ADMINISTRATEUR") || profil.equals("EMPLOYE") ){
-			JMenuItem mnGerant = new JMenuItem("Gerant");
-			mnGerant.setMnemonic('g');
-			menuBar.add(mnGerant);
+			JMenuItem mnEmploye = new JMenuItem("Employe");
+			mnEmploye.setMnemonic('e');
+			menuBar.add(mnEmploye);
 			
-			mnGerant.addActionListener(new ActionListener() {
+			mnEmploye.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
@@ -163,7 +163,7 @@ public class Main extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				((CardLayout)principal.getLayout()).show(principal, "accueil");
+				((CardLayout)principal.getLayout()).show(principal, "Accueil");
 				principal.repaint();
 				principal.validate();
 			}
@@ -174,10 +174,10 @@ public class Main extends JFrame {
 	}
 	
 	private void ihm(String profil){
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Main.class.getResource("/Vue/images/logo.jpg")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Main.class.getResource("/Vue/images/logo.png")));
 		setResizable(false);
 		//setIconImage(new ImageIcon("images/logo.jpg").getImage());
-		setTitle("Application de gestion de comptes bancaires");
+		setTitle("    My Bank  ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 790, 478);
 		setVisible(true);
@@ -195,8 +195,8 @@ public class Main extends JFrame {
 		panel.setBackground(SystemColor.activeCaption);
 		contentPane.add(panel, BorderLayout.NORTH);
 		
-		JLabel lblNewLabel = new JLabel("application de gestion de Comptes Bancaires");
-		lblNewLabel.setForeground(new Color(0, 0, 255));
+		JLabel lblNewLabel = new JLabel("    My Bank  ");
+		lblNewLabel.setForeground(new Color(227, 115, 131));
 		lblNewLabel.setFont(new Font("Sitka Text", Font.BOLD, 23));
 		panel.add(lblNewLabel);
 		
@@ -207,7 +207,7 @@ public class Main extends JFrame {
 
 	private void accueil(String profil){
 		JPanel panel_2 = new JPanel();
-		principal.add(panel_2, "accueil");
+		principal.add(panel_2, "Accueil");
 		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		JPanel panel_3 = new JPanel();
@@ -216,7 +216,7 @@ public class Main extends JFrame {
 		panel_3.setLayout(new GridLayout(0, 1));
 		
 		JLabel label = new JLabel(" ");
-		label.setIcon(new ImageIcon(Main.class.getResource("/Vue/images/logo.jpg")));
+		label.setIcon(new ImageIcon(Main.class.getResource("/Vue/images/logo.png")));
 		panel_3.add(label);
 		
 		JPanel panel_4 = new JPanel();
@@ -227,31 +227,31 @@ public class Main extends JFrame {
 		panel_5.setBackground(SystemColor.window);
 		panel_4.add(panel_5);
 		
-		JLabel label_1 = new JLabel("Bienvenue");
+		JLabel label_1 = new JLabel("Welcome");
 		label_1.setFont(new Font("Dialog", Font.PLAIN, 18));
 		panel_5.add(label_1);
 		
-		JLabel label_2 = new JLabel("Ce logiciel va vous permettre de gérer ");
-		label_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		JLabel label_2 = new JLabel(" Your Bank  ");
+		label_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		panel_5.add(label_2);
 		
-		JLabel label_3 = new JLabel("l’ensemble de vos comptes bancaires et d’effectuer ");
-		label_3.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		JLabel label_3 = new JLabel("Your way of life  ");
+		label_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		panel_5.add(label_3);
 		
-		JLabel label_4 = new JLabel("un suivi budgétaire de vos recettes et dépenses");
-		label_4.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		panel_5.add(label_4);
+		//JLabel label_4 = new JLabel("un suivi budgétaire de vos recettes et dépenses");
+		//label_4.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		//panel_5.add(label_4);
 		
 		JPanel panel_6 = new JPanel();
 		panel_4.add(panel_6);
 		final String debut;
-		if(profil.equals("CAISSE"))
+		if(profil.equals("EMPLOYE"))
 			 debut = "compte";
-		else if(profil.equals("ADMINISTRATEUR") || profil.equals("DIRECTEUR"))
-				debut = "gerant";
+		else if(profil.equals("ADMINISTRATEUR") || profil.equals("EMPLOYE"))
+				debut = "employe";
 		else  debut = "operation";
-		JButton button = new JButton("Demarrer");
+		JButton button = new JButton("Begin");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				((CardLayout)principal.getLayout()).show(principal, debut );
@@ -259,9 +259,9 @@ public class Main extends JFrame {
 				principal.validate();
 			}
 		});
-		button.setForeground(new Color(65, 105, 225));
+		button.setForeground(new Color(227, 115, 131));
 		button.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		button.setBackground(Color.GREEN);
+		button.setBackground(Color.PINK);
 		panel_6.add(button);
 	}
 

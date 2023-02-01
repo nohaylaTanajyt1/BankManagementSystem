@@ -7,5 +7,5 @@ public class Variables {
 	static String MOTDEPASS="password";
 	static String SERVEUR="localhost";
 	static String USER="root";
-	static String DRIVER="com.mysql.jdbc.Driver";
+	static String DRIVER="com.mysql.cj.jdbc.Driver"; ////////add cj
 }

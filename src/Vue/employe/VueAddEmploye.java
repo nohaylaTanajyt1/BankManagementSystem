@@ -111,7 +111,7 @@ public class VueAddEmploye extends JPanel {
 		JPanel panel_8 = new JPanel();
 		add(panel_8);
 		
-		JLabel lblCompte = new JLabel("Profil du Gérant                 ");
+		JLabel lblCompte = new JLabel("Profil Employe                 ");
 		panel_8.add(lblCompte);
 		
 		JComboBox<String> numCompte = new JComboBox<String>();

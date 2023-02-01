@@ -50,7 +50,7 @@ public class VueOperations extends JPanel {
 		setLayout(gridBagLayout);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(255, 255, 255));
+		panel_1.setBackground(new Color(248, 200, 220));
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
 		gbc_panel_1.fill = GridBagConstraints.BOTH;
 		gbc_panel_1.anchor = GridBagConstraints.NORTH;
@@ -61,7 +61,7 @@ public class VueOperations extends JPanel {
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(204, 204, 255));
+		panel_2.setBackground(new Color(255, 192, 203));
 		panel_1.add(panel_2, BorderLayout.NORTH);
 		
 		JLabel label = new JLabel("Options Opérations");
@@ -70,7 +70,7 @@ public class VueOperations extends JPanel {
 		panel_2.add(label);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(255, 255, 255));
+		panel_3.setBackground(new Color(248, 200, 220));
 		panel_1.add(panel_3, BorderLayout.CENTER);
 		panel_3.setLayout(new BoxLayout(panel_3, BoxLayout.Y_AXIS));
 		
@@ -91,19 +91,19 @@ public class VueOperations extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				int index = listeOperation.getTable().getSelectedRow();
 				selectClient=((ModelListerOperations)listeOperation.getTable().getModel()).getClientAt(index);
-				String solde=JOptionPane.showInputDialog(VueOperations.this, "entre le montant que vous voulez deposer");
+				String solde=JOptionPane.showInputDialog(VueOperations.this, "Entrer le montant que vous voulez deposer");
 				//solde.matches();
 				if(solde != null){
 					try{
 						selectClient.getCompte().depot(Integer.parseInt(solde));
-						JOptionPane.showMessageDialog(VueOperations.this, "votre compte a éte crédité avec succes");
+						JOptionPane.showMessageDialog(VueOperations.this, "Le compte a éte crédité avec succes");
 						
 					}catch(NumberFormatException n){
-						JOptionPane.showMessageDialog(VueOperations.this, "ce montant "+solde+" n'est pas valide");
+						JOptionPane.showMessageDialog(VueOperations.this, "Ce montant "+solde+" n'est pas valide");
 						
 					}
 					catch(IllegalArgumentException a){
-						JOptionPane.showMessageDialog(VueOperations.this, "le solde de votre compte est inferieur à la valeur saisie");
+						JOptionPane.showMessageDialog(VueOperations.this, "le solde du compte est inferieur à la valeur saisie");
 					}
 					
 				}
@@ -139,19 +139,19 @@ public class VueOperations extends JPanel {
 				int index = listeOperation.getTable().getSelectedRow();
 				selectClient=((ModelListerOperations)listeOperation.getTable().getModel()).getClientAt(index);
 				if(selectClient.getPrenom() != null){
-					String solde=JOptionPane.showInputDialog(VueOperations.this, "entre le montant que vous voulez retirer");
+					String solde=JOptionPane.showInputDialog(VueOperations.this, "Entrer le montant que vous voulez retirer");
 					//solde.matches();
 					if(solde != null){
 							try{
 								selectClient.getCompte().debit(Integer.parseInt(solde));
-								JOptionPane.showMessageDialog(VueOperations.this, "compte debité avec succes");
+								JOptionPane.showMessageDialog(VueOperations.this, "Compte debité avec succes");
 								
 							}catch(NumberFormatException n){
-								JOptionPane.showMessageDialog(VueOperations.this, "ce montant "+solde+" n'est pas valide");
+								JOptionPane.showMessageDialog(VueOperations.this, "Ce montant "+solde+" n'est pas valide");
 								
 							}
 							catch(IllegalArgumentException a){
-								JOptionPane.showMessageDialog(VueOperations.this, "le solde de votre compte est inferieur à la valeur saisie");
+								JOptionPane.showMessageDialog(VueOperations.this, "le solde du compte est inférieur à la valeur saisie");
 							}
 					}
 				}

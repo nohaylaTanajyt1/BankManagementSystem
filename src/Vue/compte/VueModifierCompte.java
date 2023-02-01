@@ -42,8 +42,8 @@ public class VueModifierCompte extends JPanel {
 		JPanel panel_2 = new JPanel();
 		add(panel_2);
 		
-		JLabel lblSoldeDeparte = new JLabel("Solde Departe :    ");
-		panel_2.add(lblSoldeDeparte);
+		JLabel lblSoldeDepart = new JLabel("Solde Depart :    ");
+		panel_2.add(lblSoldeDepart);
 		
 		textField_1 = new JTextField();
 		textField_1.setText(""+c.getSolde());
@@ -84,12 +84,12 @@ public class VueModifierCompte extends JPanel {
 					//Compte.ouvrirCompte();
 					
 					//parent.addCompte(new Compte(Double.parseDouble(solde), Double.parseDouble(decouvert)));
-					JOptionPane.showMessageDialog(VueModifierCompte.this, "compte ajoute avec succes");
+					JOptionPane.showMessageDialog(VueModifierCompte.this, "Compte ajouté avec succes");
 					//parent.updateListe();
 					//parent.listerCompte();
 					
 				}catch(NumberFormatException n){
-					JOptionPane.showMessageDialog(VueModifierCompte.this, "erreur veuillez verificier ce que vous avez saisi !!");
+					JOptionPane.showMessageDialog(VueModifierCompte.this, "Erreur de saisie !!");
 				}
 				
 				

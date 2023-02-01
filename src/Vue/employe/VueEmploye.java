@@ -102,7 +102,7 @@ public class VueEmploye extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				int index = listeEmploye.getTable().getSelectedRow();
 				((ModelListerEmploye)listeEmploye.getTable().getModel()).removeEmploye(index);//.getCompteAt(index);
-				JOptionPane.showMessageDialog(VueEmploye.this, "Employe supprimer avec succes");
+				JOptionPane.showMessageDialog(VueEmploye.this, "Employe supprimé avec succes");
 				updateListe();
 			
 			}
@@ -131,7 +131,7 @@ public class VueEmploye extends JPanel {
 																+" mot de passe : " +selectEmploye.getPassword()
 																	+ "Profil : "+selectEmploye.getProfil());
 				else 
-					JOptionPane.showMessageDialog(VueEmploye.this, "ce compte ce compte n'est associé a un client");
+					JOptionPane.showMessageDialog(VueEmploye.this, "Ce compte n'est pas associé ");
 			}
 		});
 		

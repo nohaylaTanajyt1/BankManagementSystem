@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-//import Modele.gestionBD.Client;
+import Modele.gestionBD.Client;
 import Modele.gestionBD.Compte;
  /**
  * author nohayla

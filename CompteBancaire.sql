@@ -8,7 +8,7 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+#test!!!!
 --
 -- Structure de la table `client`
 --
@@ -28,9 +28,9 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`cni`, `nom`, `prenom`, `telephone`, `adresse`, `codesecret`, `compte_numero`) VALUES
-(433563, 'egze', 'efazgz', 'egzgzr', 'eav', '1234', 12),
-(4511233, 'ngom', 'bassirou', '55785', 'thies hersent', '1234', 1),
-(87564543, 'mbaye', 'samba', '5342412', 'thies', '4567', 13);
+(9396563, 'dupont', 'pierre', '0789562310', 'marseille 9eme', '1234', 12673),
+(4856339, 'wood', 'eve', '0689578810', 'marseille 7eme', '8536', 15639),
+(9386633, 'allaoui', 'sana', '06782310', 'marseille 3eme', '2869', 15639);
 
 -- --------------------------------------------------------
 
@@ -49,11 +49,9 @@ CREATE TABLE `compte` (
 --
 
 INSERT INTO `compte` (`numero`, `solde`, `decouvert`) VALUES
-(1, 9861, 4000),
-(12, 13124, 124254),
-(13, 1853, 135),
-(14, 100, 199),
-(15, 20000, 200);
+(12673, 9861, 4000),
+(15639, 13124, 124254),
+(15639, 1853, 135);
 
 -- --------------------------------------------------------
 
@@ -61,7 +59,7 @@ INSERT INTO `compte` (`numero`, `solde`, `decouvert`) VALUES
 -- Structure de la table `employe`
 --
 
-CREATE TABLE `Employe` (
+CREATE TABLE `employe` (
   `cni` int(11) NOT NULL,
   `nom` varchar(255) DEFAULT NULL,
   `prenom` varchar(255) DEFAULT NULL,
@@ -76,9 +74,10 @@ CREATE TABLE `Employe` (
 -- Contenu de la table `employe`
 --
 
-INSERT INTO `Employe` (`cni`, `nom`, `prenom`, `telephone`, `adresse`, `login`, `password`, `profil`) VALUES
-(0, 'tan', 'noha', '775686888', 'luminy', 'bng', 'passer', 'ADMINISTRATEUR'),
-(1234676542, 'hajar', 'jana', '775686888', 'nice', 'bngbng', 'passer', 'EMPLOYE');
+INSERT INTO `employe` (`cni`, `nom`, `prenom`, `telephone`, `adresse`, `login`, `password`, `profil`) VALUES
+(9853696, 'tan', 'noha', '075686888', 'luminy', 'noha', 'passer', 'ADMINISTRATEUR'),
+(8234678, 'hajar', 'jana', '075686888', 'nice', 'bng', 'passer', 'EMPLOYE'),
+(3467654, 'shyrin', 'bl', '065686878', 'nice', 'shyri', 'passer', 'EMPLOYE');
 
 
 -- --------------------------------------------------------
@@ -123,11 +122,41 @@ CREATE TABLE IF NOT EXISTS `TransactionTable` (
   `dateOfTransaction` date NOT NULL,
   `accountNo` varchar(100) NOT NULL,
   PRIMARY KEY (`id_transaction`),
-  KEY `FK_id_employe` (`id_employe`),
-  CONSTRAINT `FK_id_employe` FOREIGN KEY (`id_employe`) REFERENCES `employe`(`id_employe`)
+  KEY `FK_cni` (`cni`),
+  CONSTRAINT `FK_cni` FOREIGN KEY (`cni`) REFERENCES `employe`(`cni`)
 
-);
---
+)ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+--------------------------
+
+CREATE TABLE IF NOT EXISTS `type_compte` (
+  `id_typeC` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `plafond` float unsigned NOT NULL DEFAULT '0',
+  `montant_minimum` float unsigned NOT NULL DEFAULT '0',
+  `taux_interet` float unsigned NOT NULL DEFAULT '0',
+ 
+  PRIMARY KEY (`id_typeC`),
+  KEY `FK_numero` (`numero`),
+  CONSTRAINT `FK_numero` FOREIGN KEY (`numero`) REFERENCES `compte`(`numero`)
+)ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+------------------------------------
+
+CREATE TABLE IF NOT EXISTS `Transferer_argent` (
+  `idTransfer` int(11) NOT NULL AUTO_INCREMENT,
+   `id_client_emetteur`  int(11) NOT NULL AUTO_INCREMENT,
+  `amount` float NOT NULL,
+  `accountNo_emetteur` varchar(100) NOT NULL,
+  `accountNo_recepteur` varchar(100) NOT NULL,
+  PRIMARY KEY (`idTransfer`),
+  KEY `FK_cni` (`cni`),
+  CONSTRAINT `FK_cni` FOREIGN KEY (`cni`) REFERENCES `employe`(`cni`)
+)ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+-----------------------------------------
+
+
+
+
+
+
 -- Index pour les tables exportées
 --
 
@@ -145,9 +174,9 @@ ALTER TABLE `compte`
   ADD PRIMARY KEY (`numero`);
 
 --
--- Index pour la table `gerant`
+-- Index pour la table `employe`
 --
-ALTER TABLE `gerant`
+ALTER TABLE `employe`
   ADD PRIMARY KEY (`cni`);
 
 --

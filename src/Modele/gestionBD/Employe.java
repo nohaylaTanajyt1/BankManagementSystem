@@ -16,6 +16,8 @@ public class Employe extends Personne {
 	
 
 	private static Connection connect;
+
+
 	
 	public Employe(String nom, String prenom, String adresse, long cNI,
 			String telephone, String login, String password) {
@@ -50,6 +52,7 @@ public class Employe extends Personne {
 	public void setProfil(Profil profil) {
 		this.profil = profil;
 	}
+	
 	 /**
      * supprimer un profil employé
      * 
@@ -64,6 +67,7 @@ public class Employe extends Personne {
 		System.out.println(e.getMessage());
 	}
 }
+
 	 /**
      * consulter un profil employé
      * 
@@ -90,6 +94,7 @@ public class Employe extends Personne {
      * 
      */	
 	public static void 	ajouterEmploye(Employe gr){
+
 		try{
 			connect=Connexion.getConnection();
 			String req = "insert  into Employe(nom, prenom, adresse, CNI, telephone,login, passsword,profil) values(?,?,?,?,?,?,?,?)";
@@ -112,19 +117,21 @@ public class Employe extends Personne {
 	
 	}
 	
-	public static boolean existeEmploye(String login, String pass, String profil)
+	public static boolean existeEmploye(String login, String password, String profil)
 	{
+		
 		try{
 			Connection connect=Connexion.getConnection();
+
 			String req = "select count(*) from Employe where login=? and password=? and profil=?";
 			PreparedStatement sta = connect.prepareStatement(req);
+		
 			sta.setString(1,login);
-			sta.setString(2,pass);
+			sta.setString(2,password);
 			sta.setString(3,profil);
-			ResultSet resultat=sta.executeQuery();
-			
-			resultat.next();
-			return resultat.getInt(1) != 0;
+			ResultSet resultats=sta.executeQuery();
+			resultats.next();
+			return resultats.getInt(1) != 0;
 		}catch(SQLException e){
 			System.out.println(e.getMessage());
 			return false;

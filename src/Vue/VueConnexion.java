@@ -58,11 +58,11 @@ public class VueConnexion extends JFrame {
 		setContentPane(contentPane);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 255, 255));
+		panel.setBackground(new Color(255, 182, 193));
 		contentPane.add(panel, BorderLayout.NORTH);
 		
-		JLabel label = new JLabel("application de gestion de Comptes Bancaires");
-		label.setForeground(Color.BLUE);
+		JLabel label = new JLabel("S&N");
+		label.setForeground(Color.PINK);
 		label.setFont(new Font("Sitka Text", Font.BOLD, 12));
 		panel.add(label);
 		

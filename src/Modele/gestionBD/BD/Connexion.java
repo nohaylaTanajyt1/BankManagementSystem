@@ -21,8 +21,9 @@ public class Connexion {
 		try{
 			Class.forName(Variables.DRIVER);
 			cnx = (Connection)DriverManager.getConnection("jdbc:mysql://"+Variables.SERVEUR+":"+Variables.PORT+"/"+Variables.NOMBD,Variables.USER,Variables.MOTDEPASS);
+			if( cnx!=null){ System.out.println(("You are connected to the Database"));}
 		}catch(Exception e){
-			System.out.println("erreur connexion");
+			System.out.println("erreur connexion  à la base de données !!! ");
 		}
 		return cnx;
 	}

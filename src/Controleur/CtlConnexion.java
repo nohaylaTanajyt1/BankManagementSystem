@@ -2,7 +2,7 @@ package Controleur;
 
 import Modele.gestionBanque.MdlConnexion;
 import Vue.Main;
-//import Vue.MainGui;
+import Vue.MainGui;
 import Vue.VueConnexion;
 
 import javax.swing.*;

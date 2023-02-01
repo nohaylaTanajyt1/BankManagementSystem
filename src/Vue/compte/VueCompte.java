@@ -48,7 +48,7 @@ public class VueCompte extends JPanel {
 		setLayout(gridBagLayout);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(255, 255, 255));
+		panel_1.setBackground(new Color(255, 192, 203));
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
 		gbc_panel_1.fill = GridBagConstraints.BOTH;
 		gbc_panel_1.anchor = GridBagConstraints.NORTH;
@@ -59,7 +59,7 @@ public class VueCompte extends JPanel {
 		panel_1.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(204, 204, 255));
+		panel_2.setBackground(new Color(248, 200, 220));
 		panel_1.add(panel_2, BorderLayout.NORTH);
 		
 		JLabel label = new JLabel("Options");
@@ -68,7 +68,7 @@ public class VueCompte extends JPanel {
 		panel_2.add(label);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(255, 255, 255));
+		panel_3.setBackground(new Color(255, 192, 203));
 		panel_1.add(panel_3, BorderLayout.CENTER);
 		panel_3.setLayout(new BoxLayout(panel_3, BoxLayout.Y_AXIS));
 		
@@ -131,7 +131,7 @@ public class VueCompte extends JPanel {
 				if(c1.getPrenom() != null)
 					JOptionPane.showMessageDialog(VueCompte.this, "ce compte appartient a : "+c1.getPrenom()+" "+c1.getNom());
 				else 
-					JOptionPane.showMessageDialog(VueCompte.this, "ce compte ce compte n'est associé a un client");
+					JOptionPane.showMessageDialog(VueCompte.this, "ce compte n'est associé pas à un client");
 			}
 		});
 		

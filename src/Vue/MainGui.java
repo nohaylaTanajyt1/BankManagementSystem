@@ -49,8 +49,8 @@ public class MainGui extends JFrame {
 	 */
 	public MainGui() {
 		setResizable(false);
-		//setIconImage(new ImageIcon("images/logo.jpg").getImage());
-		setTitle("Application de gestion de comptes bancaires");
+		setIconImage(new ImageIcon("images/logo.png").getImage());
+		setTitle(" S&N : YOUR BANK ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 708, 478);
 		setVisible(true);
@@ -117,8 +117,8 @@ public class MainGui extends JFrame {
 		panel.setBackground(SystemColor.window);
 		contentPane.add(panel, BorderLayout.NORTH);
 
-		JLabel lblNewLabel = new JLabel("application de gestion de Comptes Bancaires");
-		lblNewLabel.setForeground(new Color(0, 0, 255));
+		JLabel lblNewLabel = new JLabel("S&N ");
+		lblNewLabel.setForeground(new Color(227, 115, 131));
 		lblNewLabel.setFont(new Font("Sitka Text", Font.BOLD, 23));
 		panel.add(lblNewLabel);
 
@@ -132,7 +132,7 @@ public class MainGui extends JFrame {
 		panel_2.setLayout(new GridLayout(0, 1));
 
 		JLabel label = new JLabel(" ");
-		//label.setIcon(new ImageIcon("images/logo.jpg"));
+		label.setIcon(new ImageIcon("images/logo.png"));
 		panel_2.add(label);
 
 		JPanel panel_3 = new JPanel();
@@ -143,29 +143,29 @@ public class MainGui extends JFrame {
 		JPanel panel_5 = new JPanel();
 		panel_3.add(panel_5);
 
-		JLabel label_1 = new JLabel("Bienvenue");
+		JLabel label_1 = new JLabel("Welcome");
 		label_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
 		panel_5.add(label_1);
 
-		JLabel label_2 = new JLabel("Ce logiciel va vous permettre de gérer ");
-		label_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		JLabel label_2 = new JLabel(" Your Bank  ");
+		label_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		panel_5.add(label_2);
 
-		JLabel label_3 = new JLabel("l'ensemble de vos comptes bancaires et d'effectuer ");
-		label_3.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		JLabel label_3 = new JLabel("Your way of life ");
+		label_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		panel_5.add(label_3);
 
-		JLabel label_4 = new JLabel("un suivi budgtaire de vos recettes et dépenses");
-		label_4.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		panel_5.add(label_4);
+		//JLabel label_4 = new JLabel("un suivi budgtaire de vos recettes et dépenses");
+		//label_4.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		//panel_5.add(label_4);
 
 		JPanel panel_4 = new JPanel();
 		panel_3.add(panel_4);
 
-		JButton btnDemarrer = new JButton("Demarrer");
+		JButton btnDemarrer = new JButton("Begin");
 
-		btnDemarrer.setForeground(new Color(65, 105, 225));
-		btnDemarrer.setBackground(new Color(0, 255, 0));
+		btnDemarrer.setForeground(new Color(0,0,0));
+		btnDemarrer.setBackground(new Color(216, 191, 216));
 		btnDemarrer.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		panel_4.add(btnDemarrer);
 	}
