@@ -1,6 +1,6 @@
 # BankManagementSystem
 
-Gestionnaire de compted bancaired en JAVA SWING
+Gestionnaire de comptes bancaires en JAVA SWING
 
 
 ## Installation :
